@@ -22,6 +22,8 @@ app.use(express.static("public"));
 // Import routes
 const bookRoutes = require("./routes/bookRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
+const gameRoutes = require("./routes/gameRoutes")
+
 // Create route
 app.get("/users", async (req, res) => {
   let sql = "SELECT * FROM users";
@@ -42,6 +44,7 @@ app.get("/users", async (req, res) => {
 // Use routes in express app
 app.use(bookRoutes);
 app.use(categoryRoutes);
+app.use(gameRoutes);
 
 // Start express webb
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
